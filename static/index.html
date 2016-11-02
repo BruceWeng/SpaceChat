@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="SpaceChatApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.1/socket.io.js"></script>
+    <script src="js/controller.js"></script>
 
 
 
@@ -17,51 +18,52 @@
 
   </head>
   <body>
+    <div class="container" ng-controller="ChatController">
+
+      <div class="wrapper" >
+        <header>
+          <h1>Chat</h1>
+          <p>Live chat the live feed</p>
+          <p>Name:
+            <input type="text" ng-model="name" placeholder="Username" size="14" /></p>
+           <div class="scroll" id="msgpane">
+           <p >Some messages here! {{name}}
+
+                </p>
 
 
-    <div class="wrapper" >
-      <header>
-        <h1>Chat</h1>
-        <p>Live chat the live feed</p>
-        <p>Name:
-          <input type="text" ng-model="name" placeholder="Username" size="14" /></p>
-         <div class="scroll" id="msgpane">
-         <p >Some messages here! {{name}}
+           </div>
 
-              </p>
+           <form>
 
+                  <input type="text"  size="30"  placeholder="..">
+                  <input type="submit"  value="Send" >
 
-         </div>
+              </form>
+        </header>
+        <section>
+          <h1>International Space Station Live</h1>
+              <iframe width="480" height="264"
+              src="https://www.ustream.tv/embed/9408562?ub=ff3d23&amp;lc=ff3d23&amp;oc=ffffff&amp;uc=ffffff&amp;html5ui=1"
+              allowfullscreen="true" webkitallowfullscreen="true" scrolling="no" frameborder="0" style="border: 0px none transparent;">
+              </iframe>
 
-         <form>
+           <br />
 
-                <input type="text"  size="30"  placeholder="..">
-                <input type="submit"  value="Send" >
+          <h2>Earth Viewing Experiment</h2>
 
-            </form>
-      </header>
-      <section>
-        <h1>ISS Live</h1>
-            <iframe width="480" height="264"
-            src="https://www.ustream.tv/embed/9408562?ub=ff3d23&amp;lc=ff3d23&amp;oc=ffffff&amp;uc=ffffff&amp;html5ui=1"
-            allowfullscreen="true" webkitallowfullscreen="true" scrolling="no" frameborder="0" style="border: 0px none transparent;">
-            </iframe>
-
-         <br />
-
-        <h2>Earth Viewing Experiment</h2>
-
-        <iframe width="480" height="270"
-        src="https://www.ustream.tv/embed/17074538?html5ui=1"
-        allowfullscreen="true" webkitallowfullscreen="true" scrolling="no" frameborder="0" style="border: 0px none transparent;">
-        </iframe>
+          <iframe width="480" height="270"
+          src="https://www.ustream.tv/embed/17074538?html5ui=1"
+          allowfullscreen="true" webkitallowfullscreen="true" scrolling="no" frameborder="0" style="border: 0px none transparent;">
+          </iframe>
 
 
-        <p>International Space Station Live Feed</p>
+          <h2>International Space Station Live Feed</h2>
 
 
 
+      </div>
+      <script src="js/scale.fix.js"></script>
     </div>
-    <script src="js/scale.fix.js"></script>
   </body>
 </html>
