@@ -8,6 +8,6 @@ SpaceChatApp.controller('ChatController', function($scope) {
   $scope.text = '';
 
   socket.on('connect', function() {
-    console.log('Socket Connected');
+    console.log('Socket Connected...');
   });
 });
