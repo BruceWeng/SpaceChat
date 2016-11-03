@@ -7,6 +7,14 @@ SpaceChatApp.controller('ChatController', function($scope) {
   $scope.name = '';
   $scope.text = '';
 
+  socket.on('message', function(msg) {
+    console.log(msg);
+    $scope.messages.push(msg);
+    $scope.$apply();
+    let elem = document.getElementById('msgpane');
+    elem.scrollTop = elem.scrollHeight;
+  });
+
   socket.on('connect', function() {
     console.log('Socket Connected...');
   });

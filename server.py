@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] = 'secret!'
 
 socketio = SocketIO(app)
 
-message = [
+messages = [
             {'text': 'Booting system', 'name': 'Bot'},
             {'text': 'Space Chat is now live!', 'name': 'Bot'}
           ]
@@ -20,6 +20,10 @@ def makeConnection():
     session['username'] = 'New user'
     print('Socket Connected...')
     users[session['uuid']] = {'username': 'New user'}
+
+    for message in messages:
+        print(message)
+        emit('message', message)
 
 @app.route('/')
 def mainIndex():
