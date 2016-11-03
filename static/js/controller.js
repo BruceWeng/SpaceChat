@@ -15,9 +15,15 @@ SpaceChatApp.controller('ChatController', function($scope) {
     elem.scrollTop = elem.scrollHeight;
   });
 
-  $scope.setName = function setName() {
+  $scope.setName = function() {
       socket.emit('identify', $scope.name)
   };
+
+  $scope.send = function() {
+    console.log(`Sending message: ${$scope.text}`);
+    socket.emit('message', $scope.text);
+    $scope.text = '';
+  }
 
   socket.on('connect', function() {
     console.log('Socket Connected...');

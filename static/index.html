@@ -36,9 +36,9 @@
 
            </div>
 
-           <form>
-             <input type="text"  size="30"  placeholder="Say Something here!">
-             <input type="submit"  value="Send" >
+           <form ng-submit="send()">
+             <input type="text" ng-model="text" size="30"  placeholder="Say Something here!">
+             <input type="submit"  value="Send" ng-disabled="!name">
            </form>
         </header>
         <section>
