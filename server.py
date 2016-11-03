@@ -25,6 +25,11 @@ def makeConnection():
         print(message)
         emit('message', message)
 
+@socketio.on('identify', namespace='/iss')
+def on_identify(message):
+    print('identify ' + message)
+    users[session['uuid']] = {'username': message}
+    
 @app.route('/')
 def mainIndex():
     print ('Enter Index Page...')
