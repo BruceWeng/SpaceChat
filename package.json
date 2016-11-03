@@ -1,0 +1,23 @@
+{
+  "name": "space-chat",
+  "version": "1.0.0",
+  "description": "Real-time chat room designed for discussion of live space view.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BruceWeng/SpaceChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BruceWeng/SpaceChat/issues"
+  },
+  "homepage": "https://github.com/BruceWeng/SpaceChat#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
